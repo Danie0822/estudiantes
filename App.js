@@ -42,11 +42,11 @@ const App = () => {
       <FlatList
         data={estudiante}
         renderItem={({ item }) => (
-          <TouchableOpacity style={styles.studentItem}>
-            <Text style={styles.studentId}>ID: {item.id}</Text>
-            <Text style={styles.studentName}>Nombre: {item.nombre}</Text>
-            <Text style={styles.studentInfo}>Carnet: {item.carnet}</Text>
-            <Text style={styles.studentInfo}>Materia: {item.materia}</Text>
+          <TouchableOpacity style={styles.estudianteItem}>
+            <Text style={styles.estudianteId}>ID: {item.id}</Text>
+            <Text style={styles.estudianteNombre}>Nombre: {item.nombre}</Text>
+            <Text style={styles.estudianteInfo}>Carnet: {item.carnet}</Text>
+            <Text style={styles.estudianteInfo}>Materia: {item.materia}</Text>
             <Button
               title="Eliminar"
               onPress={() => eliminarEstudiante(item.id)}
@@ -84,10 +84,10 @@ const App = () => {
               value={materia}
               onChangeText={setMateria}
             />
-            <View style={styles.buttonContainer}>
+            <View style={styles.buttonModal}>
               <Button title="Agregar Estudiante" onPress={agregarEstudiante} />
             </View>
-            <View style={styles.buttonContainer}>
+            <View style={styles.buttonModal}>
               <Button title="Cancelar" onPress={() => setModalVisible(false)} color="#FF5733" />
             </View>
           </View>
@@ -131,11 +131,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 5,
   },
-  buttonContainer: {
+  buttonModal: {
     marginBottom: 10,
     borderRadius: 10,
   },
-  studentItem: {
+  estudianteItem: {
     backgroundColor: '#E6E6E6',
     padding: 15,
     marginBottom: 10,
@@ -149,17 +149,17 @@ const styles = StyleSheet.create({
     shadowRadius: 4.65,
     elevation: 6,
   },
-  studentId: {
+  estudianteId: {
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 5,
   },
-  studentName: {
+  estudianteNombre: {
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 5,
   },
-  studentInfo: {
+  estudianteInfo: {
     fontSize: 16,
     marginBottom: 5,
   },
